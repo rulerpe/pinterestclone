@@ -18,7 +18,8 @@ var UserSchema = new Schema({
   facebook: {},
   twitter: {},
   google: {},
-  github: {}
+  github: {},
+  post: [{ type:mongoose.Schema.Types.ObjectId, ref:'Post' }]
 });
 
 /**
