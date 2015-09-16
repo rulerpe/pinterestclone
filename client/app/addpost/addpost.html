@@ -1,0 +1,50 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Addpost</h1>
+    </div>
+    <div class="col-sm-12">
+      <form class="form" name="form" ng-submit="addPost()" novalidate>
+
+        <div class="form-group">
+          <label>Title</label>
+
+          <input type="text" name="title" class="form-control" ng-model="newpost.name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Link</label>
+
+          <input type="text" name="link" class="form-control" ng-model="newpost.link" required>
+        </div>
+
+        <div class="form-group">
+          <label>Image Link</label>
+
+          <input type="text" name="imagelink" class="form-control" ng-model="newpost.imgLink" required>
+        </div>
+
+        <div class="form-group has-error">
+          <p class="help-block" ng-show="form.title.$error.required && form.link.$error.required && submitted">
+             Please enter your title and link.
+          </p>
+
+          <p class="help-block">{{ errors.other }}</p>
+        </div>
+
+        <div>
+          <button class="btn btn-inverse btn-lg btn-login" type="submit">
+            Post
+          </button>
+          <a class="btn btn-default btn-lg btn-register" href="/">
+            Cancel
+          </a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <hr>
+</div>
